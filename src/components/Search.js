@@ -1,11 +1,14 @@
-import React from "react";
-import App from "../App";
+import React from 'react';
+import App from '../App';
 
-const Search = props => {
+const Search = ({ setFilter, formHandler }) => {
   return (
     <form>
-      <input type="text" />
-      <input type="submit" />
+      <input
+        type="text"
+        onChange={event => setFilter('name', event.target.value)}
+      />
+      <input type="button" onClick={formHandler} value="Search" />
     </form>
   );
 };

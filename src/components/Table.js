@@ -1,13 +1,16 @@
-import React from "react";
-import App from "../App";
+import React from 'react';
+import App from '../App';
 
-const Table = ({ tickets }) => {
-  const ticketRows = tickets.map(ticket => (
+const Table = ({ tmEvents }) => {
+  //const selecttmEventss = tmEventss.filter(tmEvents => tmEvents.name.includes(nameFilter))
+  const tmEventsRows = tmEvents.map(tmEvents => (
     <tr>
-      <td>{ticket.name}</td>
-      <td>{ticket.type}</td>
-      <td>{ticket.id}</td>
-      <td>{ticket.url}</td>
+      <td>{tmEvents.name}</td>
+      <td>{tmEvents.type}</td>
+      <td>{tmEvents.id}</td>
+      <td>{tmEvents.url}</td>
+      <td>{tmEvents._embedded.venues['0'].location.longitude}</td>
+      <td>{tmEvents._embedded.venues['0'].location.latitude}</td>
     </tr>
   ));
   return (
@@ -18,9 +21,11 @@ const Table = ({ tickets }) => {
           <th> Type </th>
           <th> ID </th>
           <th> url </th>
+          <th> longitude </th>
+          <th> latitude </th>
         </tr>
       </thead>
-      <tbody>{ticketRows}</tbody>
+      <tbody>{tmEventsRows}</tbody>
     </table>
   );
 };
