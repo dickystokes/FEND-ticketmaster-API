@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios';
 import Table from './components/Table';
 import Search from './components/Search';
+import Map from './components/Map';
 
 class App extends Component {
   state = {
@@ -15,7 +16,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">Ticket Master API</header>
-        <div id="mapid"></div>
+        <div id="mapid">
+          <Map />
+        </div>
         <Search formHandler={this.formHandler} setFilter={this.setFilter} />
         <Table tmEvents={this.state.tmEvents} />
       </div>
