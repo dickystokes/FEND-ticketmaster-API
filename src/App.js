@@ -15,6 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">Ticket Master API</header>
+        <div id="mapid"></div>
         <Search formHandler={this.formHandler} setFilter={this.setFilter} />
         <Table tmEvents={this.state.tmEvents} />
       </div>
